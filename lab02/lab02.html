@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="../lab01/image/favicon.ico">
+
+        <title>Lab 02 Jiachen Li</title>
+        <style>
+            body {
+                background-color: #E38E49;
+            }
+            strong {
+                color: #E38E49;
+            }
+
+            .container {
+                background-color: #D4EBF8;
+                padding: 1% 10%;
+                margin: 30px;
+                font-size: 1em;
+                border-radius: 10px;
+            }
+            h1 {
+                color: #0A3981;
+                font-size: 2em;
+            }
+
+            .image {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .image div {
+                flex: 1;
+            }
+            img {
+                width: 100%;
+                min-width: 250px;
+            }
+
+            h1 span {
+                display: inline-block; 
+                transform-origin: center; 
+                animation: slideDown 1s 1, flip 1s 1s 2,  zoom 2s 3s 1; 
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-200%);
+                }
+                to {
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes flip {
+                from {
+                    transform: rotateY(360deg);
+                }
+                to {
+                    transform: rotateY(0);
+                }
+            }
+            @keyframes zoom {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.5);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1><span>Jiachen Li</span></h1>
+            <p>Something <strong>personal</strong> is that l really like my cat who is always sleeping beside me
+                <strong>Professionally</strong>, l am learning Certified Information Systems Auditor as my short term goal
+                <strong>peculiar</strong> I was one of the member that represented my country in the innovation plan project competition in the US high school DECA competition.</p> 
+        
+            <div class="image">
+                <div><img src="../lab01/image/Bio_fit.jpg" alt="Jiachen Li Bio"></div>
+                <div><img src="../lab01/image/Cat_fit.jpg" alt="My Cat"></div>
+            </div>
+            <div class="image">
+                <div><img src="../lab01/image/CISA_fit.jpg" alt="CISA logo"></div>
+                <div><img src="../lab01/image/Pin_fit.jpg" alt="Pins for DECA"></div>
+            </div>
+        </div>
+    </body>
+</html>
