@@ -173,6 +173,7 @@ header nav ul li a:hover {
   height: auto;
   display: block;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 .about_us h2 {
   color: #e2625c;
