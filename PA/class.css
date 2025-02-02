@@ -1,0 +1,25 @@
+@charset "UTF-8";
+h1 {
+  color: #00ff00;
+  font-family: Arial, Helevtica，sans-serif;
+}
+
+h1 {
+  color: #00ff00;
+}
+
+.danger {
+  color: blue;
+  background-color: lime;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron, .jumbotron_about {
+  width: 100%;
+  background-color: lightblue;
+  border: 2px solid navy;
+}
+
+.jumbotron_about {
+  color: rgba(51, 51, 51, 0.2);
+}/*# sourceMappingURL=class.css.map */
