@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <!-- include an external file -->
+    <script src = "example.js"></script>
+</head>
+<body>
+    <!-- Include JS internally -->
+    <script>
+        console.log("Hello World"); // comment
+
+        let firstName = "Jiachen";
+        let age = 29;
+        let isIschool = true;
+        console.log(firstName);
+        console.log(age);
+        console.log(isIschool);
+
+        // muliply
+        let x = 2 * 2034;
+        console.log(x);
+        console.log(1 == 2);
+        console.log(2<1 && 1<2);
+        console.log(2<1 || 1<2);
+        console.log(10 == 20 || 20 == 10);
+</script>
+<script>
+    // dog years
+    let dogAge = 14;
+    let type = "dog";
+        let petAge;
+
+        if (type == "dog") {
+             petAge = dogAge * 7；
+        } else  (type == "cat") {
+            petAge = dogAge * 5;
+        } 
+        console.log(petAge);
+    </script>
+
+    <script>
+        // gpa
+        // Write a conditionals statement to check whether the gpa qualifies for the deans list (3.5 or greater).
+        //Console log either:you made the dean’s list oryour did not make the dean’s list
+
+        let gpa;
+        if (gpa >= 3.5) {
+            console.log("You made the dean's list");
+        } else {
+            console.log("You did not make the dean's list");
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1: favourit number -->
+    <script>
+        let favNumber = 5;
+        console.log("My favorite number is " + favNumber + ".");
+    </script>
+
+    <!-- 2: Working with Arrays -->
+    <script>
+        let favoriteFoods = ["pizza", "sushi", "browni", "hotpot"];
+        console.log("The second favorite food is: " + favoriteFoods[1]);
+        favoriteFoods.push("burger");
+        console.log("Updated favorite foods array:", favoriteFoods);
+    </script>
+
+    <!-- 3: Looping thru an Array -->
+    <script>
+        for (let i = 0; i < favoriteFoods.length; i++) {
+            console.log("Favorite Food " + (i + 1) + ": " + favoriteFoods[i]);
+    }
+    </script>
+
+    <!-- 4: Filtering an Array -->
+    <script>
+        let count = 1;
+        for (let i = 0; i < favoriteFoods.length; i++) {
+            if (i === 1) {
+                continue; 
+            }
+            console.log("Favorite Food " + count + ": " + favoriteFoods[i]);
+            count++;
+        }
+    </script>
+
+    <!-- 5: Creating a book -->
+    <script>
+        let book = {
+            title: "Learning JavaScript",
+            author: "Jiachen",
+            yearPublished: 2025,
+            isAvailable: true
+        };
+        console.log("Book Title: " + book.title);
+        console.log("Book Author: " + book.author);
+        if (book.isAvailable) {
+            console.log("This book is available for checkout.");
+        } else {
+            console.log("Sorry, this book is currently checked out.");
+        }
+    </script>
+
+    <!-- 6: While Loop -->
+    <script>
+        let num = 2;
+        while (num <= 20) {
+            console.log(num);
+            num += 2;
+        }
+    </script>
+
+    <!-- 7: Using a Random Number -->
+    <script>
+        let dieRoll = Math.floor(Math.random() * 6) + 1;
+        console.log("Rolled a die: " + dieRoll);
+    </script>
+</body>
+</html>
