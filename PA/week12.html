@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Week 12</h1>
+    <div id="data"></div>
+
+
+    <script>
+        function reportResults(response){
+            let browserData = ""
+            //console.log(response);
+            if (response != "error"){
+                const myData = JSON.parse(response);
+                //console.log(myData); 
+                for (let i = 0; i < myData.length; i++){
+                    //console.log(myData[i].title);
+                    browserData = browserData + myData[i].title + "<br>";
+                }
+            }
+            document.getElementById("data").innerHTML = browserData;
+        }
+
+        endpoint = "https://jsonplaceholder.typicode.com/todos/"
+
+        const request = new XMLHttpRequest();
+
+        request.addEventListener("readystatechange", ()=>{
+            if(request.readyState === 4 && request.status === 200){
+                //console.log(request,request.responseText);
+                reportResults(request.responseText)
+            } else if (request.readyState === 4){
+                //console.log("Could not get data");
+                reportResults("error")
+            }
+        })
+
+        request.open("GET",endpoint);
+        request.send();
+        
+    </script>
+    <script>
+        const parsedData = {
+            "product": "Laptop",
+            "price": 1299.99,
+            "in_stock": true,  
+            "specs": {
+                "brand": "TechBrand",
+                "memory": "16GB",
+                "storage": "512GB SSD"
+            },
+            features: ["Touchscreen", "Backlit Keyboard","Fingerprint Scanner"]
+        };
+
+    console.log(parsedData.product);         
+    console.log(parsedData.specs.brand);
+    console.log(parsedData.features[0]);     
+    </script>
+</body>
+</html>
