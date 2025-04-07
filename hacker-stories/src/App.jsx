@@ -1,41 +1,58 @@
-import { useState } from "react";
-
-const students = [
-  {suid: 123456, name: 'Sue Flay', year: 'senior', major: 'Applied Data Analytics'}, 
-  {suid: 234567, name: 'Ella Vader', year: 'junior', major: 'Information Management and Technology'}, 
-  {suid: 345678, name: 'Chris P Bacon', year: 'junior', major: 'Innovation, Society and Technology'}
-];
+import React, { useState } from "react";
 
 function App() {
-  let [filteredStudents, setFilteredStudents] = useState(students);
-   
-  const handleChange = (event) => {
-    setFilteredStudents(
-      students.filter(student => 
-        student.name.toLowerCase().includes(event.target.value.toLowerCase())
-      )
-    );}
+  const [tasks, setTasks] = useState([
+    { id: 1, task: "Complete Lab 11", completed: false },
+    { id: 2, task: "Review JSX Events and State", completed: false },
+  ]);
   
-  return (
-  <div>
-    <label htmlFor="search">Search: </label>
-    <input id="search" type="text" onChange={handleChange} />
-    <h1>Students</h1>
-    <ul>
-  {filteredStudents.map(function (item) {
-    return (
-      <li key={item.suid}>
-        Name: {item.name}
-        <br />
-        Year: {item.year}
-        <br />
-        Major: {item.major}
-      </li>
+  const [newTask, setNewTask] = useState("");
+  const markCompleted = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
     );
-  })}
-</ul>
-  </div>
-      );
-    };  
+  };
+
+  const addTask = (event) => {
+    event.preventDefault();
+    if (newTask) {
+      setTasks([
+        ...tasks,
+        { id: tasks.length + 1, task: newTask, completed: false },
+      ]);
+      setNewTask(""); 
+    }
+  };
+
+  return (
+    <div>
+      <h1>To Do List</h1>
+      
+      <ul>
+        {tasks.map((task) => (
+          <li
+            key={task.id}
+            style={{ textDecoration: task.completed ? "line-through" : "none" }}
+          >
+            {task.task}
+            <button onClick={() => markCompleted(task.id)}>X</button>
+          </li>
+        ))}
+      </ul>
+
+      <form onSubmit={addTask}>
+        <input
+          type="text"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          placeholder="New task"
+        />
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+  );
+}
 
 export default App;
